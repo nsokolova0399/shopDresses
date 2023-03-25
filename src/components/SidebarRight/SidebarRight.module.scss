@@ -1,0 +1,129 @@
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+
+.sidebarRight {
+  position: absolute;
+  min-width: 42rem;
+  height: 100%;
+  right: 0;
+  background: #FFFFFF;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+}
+
+
+.cartItem {
+  border: 1px solid #F3F3F3;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  align-content: center;
+
+  .cartItemImg {
+    height: 70px;
+    width: 70px;
+    background-size: contain;
+    background-position: 0 -3px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  b {
+    font-size: 14px;
+  }
+
+  .removeButton {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.15s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.items{
+  flex:1;
+  overflow: auto;
+  margin-bottom: 30px;
+}
+
+.cartTotalBlock{
+  ul{
+    display: block;
+    margin-bottom: 4rem !important;
+
+    li{
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 2rem;
+      div{
+        flex: 1;
+        height: 0.1rem;
+        border-bottom: 1px dashed #dfdfdf;
+        position: relative;
+        top:-0.4rem;
+        margin:  0 0.7rem;
+      }
+    }
+  }
+  .greenButton{
+    position: relative;
+    &:hover{
+      img{
+        transform: translateX(0.5rem);
+      }
+    }
+    img{
+      position: absolute;
+      padding-right: 2rem;
+      top:2rem;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+}
+
+
+.greenButton{
+  width: 100%;
+  height: 5.5rem;
+  background: #9DD558;
+  border-radius: 1.8rem;
+  border: 0;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  &:hover{
+    background: lighten(#9dd558, 5%) ;
+  }
+  &:hover {
+    background: darken(#9dd558, 5%);
+  }
+
+}

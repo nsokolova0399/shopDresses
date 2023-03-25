@@ -1,0 +1,45 @@
+.card {
+  max-width: 21rem;
+  background: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  border-radius: 4rem;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  padding: 3rem;
+  &:hover {
+    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
+    transform: translateY(-0.5rem);
+  }
+
+  .like {
+    left: 0.3rem;
+    top: 0.9rem;
+  }
+
+  .product {
+    left: 0;
+    top: 0
+  }
+
+  .title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-top: 1.4rem;
+  }
+
+  .priceTitle {
+    font-weight: 500;
+    color: #BDBDBD;
+    font-size: 1.1rem;
+
+  }
+
+  .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .favorite {
+    position: absolute;
+    cursor: pointer;
+  }
+}
