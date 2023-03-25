@@ -3,16 +3,10 @@ import Card from './components/Card'
 import Header from "./components/Header";
 import SidebarRight from "./components/SidebarRight"
 
-// const arr = [
-//     {name: 'Платье мини с оборками и высоким воротником из цветочного принта', price:142, image:'/img/1.webp'},
-//     {name: 'Черное корсетное платье мини с корсетными рукавами и корсетными рукавами', price:120, image:'/img/2.webp'},
-//     {name: 'Черно-белое корсетное платье мини из букле с вырезом сердечком', price:105, image:'/img/3.webp'},
-//     {name: 'Розовое платье мини с открытыми плечами и кисточками', price:140, image:'/img/4.webp'},
-// ]
 
 function App() {
     const [items, setItems] = React.useState([]);
-    const [cartItems, setCartItems] = React.useState([]);
+    // const [cartItems, setCartItems] = React.useState([]);
     const [cartOpened, setCartOpened] = React.useState(false);
 
    React.useEffect(()=>{

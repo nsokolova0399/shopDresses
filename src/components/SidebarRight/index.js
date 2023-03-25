@@ -10,19 +10,19 @@ function SidebarRight({onClose, items=[]}) {
                 </h2>
 
                 <div className={styles.items}>
-                    {
-                        items.map((obj) => {
-                            <div className={styles.cartItem}>
-                               <div className={styles.cartItemImg} style={{backgroundImage: "url(./img/product.svg)"}}></div>
-                             <div className="flex" style={{marginRight: "2rem"}}>
-                                <p style={{marginBottom:"0.5rem"}}>Мужские Кроссовки Nike Air Max 270</p>
-                                   <b>12 999 руб.</b>
-                              </div>
-                               <img className={styles.removeButton} style={{width:"3.2rem", height:"3.2rem"}} src="/img/cartRemove.svg" alt="Dresses"/>
-                            </div>
+                    {/*{*/}
+                    {/*    items.map((obj) => {*/}
+                    {/*        <div className={styles.cartItem}>*/}
+                    {/*           <div className={styles.cartItemImg} style={{backgroundImage: "url(./img/product.svg)"}}></div>*/}
+                    {/*         <div className="flex" style={{marginRight: "2rem"}}>*/}
+                    {/*            <p style={{marginBottom:"0.5rem"}}>Мужские Кроссовки Nike Air Max 270</p>*/}
+                    {/*               <b>12 999 руб.</b>*/}
+                    {/*          </div>*/}
+                    {/*           <img className={styles.removeButton} style={{width:"3.2rem", height:"3.2rem"}} src="/img/cartRemove.svg" alt="Dresses"/>*/}
+                    {/*        </div>*/}
 
-                        })
-                    }
+                    {/*    })*/}
+                    {/*}*/}
 
 
                 </div>
