@@ -1,40 +1,40 @@
 import styles from './SidebarRight.module.scss'
+import React from "react";
 
 
-function SidebarRight({onClose, items=[]}) {
+function SidebarRight({onClose, items=[], onDelete}) {
+    let sum = 0;
+    const [isLiked, setIsLiked] = React.useState(true)
+
     return (
         <div className={styles.overlay}>
             <div className={styles.sidebarRight}>
                 <h2 className="d-flex justify-between">Корзина
-                    <img onClick={onClose} className={styles.removeButton} src="/img/cartRemove.svg" style={{width:"3.2rem", height:"3.2rem"}} alt="Sneakers"/>
+                    <img onClick={onClose} className={styles.removeButton} src="/img/cartRemove.svg" style={{width:"3.2rem", height:"3.2rem"}} alt="Dresses"/>
                 </h2>
-
                 <div className={styles.items}>
-                    {/*{*/}
-                    {/*    items.map((obj) => {*/}
-                    {/*        <div className={styles.cartItem}>*/}
-                    {/*           <div className={styles.cartItemImg} style={{backgroundImage: "url(./img/product.svg)"}}></div>*/}
-                    {/*         <div className="flex" style={{marginRight: "2rem"}}>*/}
-                    {/*            <p style={{marginBottom:"0.5rem"}}>Мужские Кроссовки Nike Air Max 270</p>*/}
-                    {/*               <b>12 999 руб.</b>*/}
-                    {/*          </div>*/}
-                    {/*           <img className={styles.removeButton} style={{width:"3.2rem", height:"3.2rem"}} src="/img/cartRemove.svg" alt="Dresses"/>*/}
-                    {/*        </div>*/}
-
-                    {/*    })*/}
-                    {/*}*/}
-
-
+                    {
+                        items.map((obj) => (
+                            sum+=Number(obj.price),
+                            <div className={styles.cartItem}>
+                               <div className={styles.cartItemImg} style={{backgroundImage: `url(${obj.image})`}}></div>
+                             <div className="flex" style={{marginRight: "2rem"}}>
+                                <p style={{marginBottom:"2rem"}}>{obj.name}</p>
+                                   <b>{obj.price} $</b>
+                              </div>
+                               <img onClick ={() => {onDelete(obj.id)} } className={styles.removeButton} style={{width:"3.2rem", height:"3.2rem"}} src="/img/cartRemove.svg" alt="Dresses"/>
+                            </div>
+                        ))
+                    }
                 </div>
-
                 <div className={styles.cartTotalBlock}>
                     <ul>
                         <li><span>Итого:</span>
                             <div></div>
-                            <b>21 498 руб.</b></li>
+                            <b>{sum} $</b></li>
                         <li><span>Налог 5%:</span>
                             <div></div>
-                            <b>1074 руб.</b></li>
+                            <b>{Math.floor(sum*0.05)} $</b></li>
                     </ul>
                     <button className={styles.greenButton}>
                         Оформить заказ

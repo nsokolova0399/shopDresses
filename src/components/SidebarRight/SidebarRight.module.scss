@@ -12,7 +12,7 @@
 
 .sidebarRight {
   position: absolute;
-  min-width: 42rem;
+  width: 42rem;
   height: 100%;
   right: 0;
   background: #FFFFFF;
@@ -20,7 +20,6 @@
   padding: 3rem;
   display: flex;
   flex-direction: column;
-
   h2 {
     font-weight: 700;
     font-size: 2rem;
@@ -33,26 +32,27 @@
   border: 1px solid #F3F3F3;
   border-radius: 20px;
   overflow: hidden;
-  padding: 20px;
+  padding: 2rem;
+  margin-bottom:2rem;
   display: flex;
   align-content: center;
 
   .cartItemImg {
-    height: 70px;
-    width: 70px;
+    height: 7rem;
+    width: 7rem;
     background-size: contain;
-    background-position: 0 -3px;
+    background-position: 0 -0.3rem;
     background-repeat: no-repeat;
-    margin-right: 20px;
+    margin-right: 2rem;
   }
 
   p {
-    font-size: 16px;
+    font-size: 1.6rem;
     margin: 0;
   }
 
   b {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 
   .removeButton {
@@ -69,10 +69,11 @@
 .items{
   flex:1;
   overflow: auto;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
 .cartTotalBlock{
+  font-size: 1.5rem;
   ul{
     display: block;
     margin-bottom: 4rem !important;

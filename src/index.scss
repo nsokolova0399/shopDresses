@@ -90,8 +90,8 @@ h1 {
 }
 
 .cards {
-  margin-right: -3rem;
   flex-wrap: wrap;
+  padding-top: 2rem;
 }
 
 
@@ -128,3 +128,12 @@ h1 {
 }
 
 
+.removeButton {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
