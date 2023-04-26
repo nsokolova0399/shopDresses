@@ -7,8 +7,25 @@ function Home({
                   setSearchValue,
                   items,
                   onAddToCart,
-                  onAddToFavorite
+                  onAddToFavorite,
+                  isReady
               }) {
+    const renderItems = (() => {
+        const filterItems = items.filter((item) =>
+            item.name.toLowerCase().includes(searchValue.toLowerCase())
+        );
+        return (isReady ? [...Array(8)] : filterItems)
+            .map((obj, index) => (
+                <Card
+                    key={index}
+                    onFavorite={(obj) => onAddToFavorite(obj)}
+                    onPlus={(obj) => onAddToCart(obj)}
+                    loading={isReady}
+                    {...obj}
+                />
+            ))
+    })
+
     return (
         <div className="content" style={{padding: "4rem"}}>
             <div className="d-flex align-center justify-between">
@@ -20,26 +37,13 @@ function Home({
                     {searchValue && <img onClick={() => setSearchValue('')} className="removeButton d-flex"
                                          style={{width: "3.2rem", height: "3.2rem"}} src="/img/cartRemove.svg"
                                          alt="Clear"/>}
-
                 </div>
-
             </div>
-
             <div className="cards d-flex">
-                {items
-                    .filter((item) => item.name.toLowerCase().includes(searchValue.toLowerCase()))
-                    .map((obj, index) => (
-                        <Card
-                            key={index}
-                            onPlus={(obj) => onAddToCart(obj)}
-                            onFavorite={(obj) => onAddToFavorite(obj)}
-                            {...obj}
-                        />
-                    ))}
+                {renderItems()}
             </div>
         </div>
     )
 }
-
 
 export default Home
